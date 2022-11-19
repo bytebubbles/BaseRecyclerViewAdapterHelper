@@ -650,67 +650,34 @@ abstract class BaseQuickAdapter<T, VH : RecyclerView.ViewHolder>(
 
     /************************************** Set Listener ****************************************/
 
-    /*
- fun setOnItemClickListener(listener: OnItemClickListener<T>?) = apply {
-	 this.mOnItemClickListener = listener
- }*/
 
-    fun setOnItemClickListener(listener: OnItemClickListener<T>?): BaseQuickAdapter<T,VH>{
+    fun setOnItemClickListener(listener: OnItemClickListener<T>?) = apply {
         this.mOnItemClickListener = listener
-        return this
     }
 
     fun getOnItemClickListener(): OnItemClickListener<T>? = mOnItemClickListener
 
-    /*fun setOnItemLongClickListener(listener: OnItemLongClickListener<T>?)  = apply {
+    fun setOnItemLongClickListener(listener: OnItemLongClickListener<T>?)  = apply {
         this.mOnItemLongClickListener = listener
-    }*/
-
-    fun setOnItemLongClickListener(listener: OnItemLongClickListener<T>?):BaseQuickAdapter<T,VH> {
-        this.mOnItemLongClickListener = listener
-        return this
     }
-
 
     fun getOnItemLongClickListener(): OnItemLongClickListener<T>? = mOnItemLongClickListener
 
-    /*fun addOnItemChildClickListener(@IdRes id: Int, listener: OnItemChildClickListener<T>) = apply {
+    fun addOnItemChildClickListener(@IdRes id: Int, listener: OnItemChildClickListener<T>) = apply {
         mOnItemChildClickArray.put(id, listener)
-    }*/
-    fun addOnItemChildClickListener(@IdRes id: Int, listener: OnItemChildClickListener<T>) :BaseQuickAdapter<T,VH> {
-        mOnItemChildClickArray.put(id, listener)
-        return this
     }
 
-
-
-    /*fun removeOnItemChildClickListener(@IdRes id: Int) = apply {
+    fun removeOnItemChildClickListener(@IdRes id: Int) = apply {
         mOnItemChildClickArray.remove(id)
-    }*/
-
-    fun removeOnItemChildClickListener(@IdRes id: Int)  :BaseQuickAdapter<T,VH>{
-        mOnItemChildClickArray.remove(id)
-        return this
     }
 
+    fun addOnItemChildLongClickListener(@IdRes id: Int, listener: OnItemChildLongClickListener<T>) =
+        apply {
+            mOnItemChildLongClickArray.put(id, listener)
+        }
 
-
-    /* fun addOnItemChildLongClickListener(@IdRes id: Int, listener: OnItemChildLongClickListener<T>) =
-		 apply {
-			 mOnItemChildLongClickArray.put(id, listener)
-		 }*/
-    fun addOnItemChildLongClickListener(@IdRes id: Int, listener: OnItemChildLongClickListener<T>)  :BaseQuickAdapter<T,VH> {
-        mOnItemChildLongClickArray.put(id, listener)
-        return this
-    }
-
-
-    /*fun removeOnItemChildLongClickListener(@IdRes id: Int) = apply {
+    fun removeOnItemChildLongClickListener(@IdRes id: Int) = apply {
         mOnItemChildLongClickArray.remove(id)
-    }*/
-    fun removeOnItemChildLongClickListener(@IdRes id: Int) :BaseQuickAdapter<T,VH> {
-        mOnItemChildLongClickArray.remove(id)
-        return this
     }
 
     fun addOnViewAttachStateChangeListener(listener: OnViewAttachStateChangeListener) {
