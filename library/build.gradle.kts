@@ -54,6 +54,12 @@ android {
 
 
 dependencies {
+    configurations.all {
+        resolutionStrategy {
+            force("androidx.core:core:1.6.0")
+            force("androidx.core:core-ktx:1.6.0")
+        }
+    }
     implementation("androidx.annotation:annotation:1.4.0")
 
     implementation("androidx.recyclerview:recyclerview:1.3.0-rc01")
