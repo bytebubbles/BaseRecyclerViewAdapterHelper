@@ -96,7 +96,7 @@ if (localProperties.exists()) {
     println("No props file, loading env vars")
 }
 
-afterEvaluate {
+/*afterEvaluate {
 
     publishing {
         publications {
@@ -138,18 +138,18 @@ afterEvaluate {
         }
 
         repositories {
-           /* maven {
+           *//* maven {
                 url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
                 credentials {
                     username = ossrhUsername
                     password = ossrhPassword
                 }
-            }*/
+            }*//*
         }
 
     }
 
-}
+}*/
 
 /*gradle.taskGraph.whenReady {
     if (allTasks.any { it is Sign }) {
