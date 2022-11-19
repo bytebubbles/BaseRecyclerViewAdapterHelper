@@ -61,11 +61,13 @@ dependencies {
 }
 
 
+/*
 var signingKeyId = ""//签名的密钥后8位
 var signingPassword = ""//签名设置的密码
 var secretKeyRingFile = ""//生成的secring.gpg文件目录
 var ossrhUsername = ""//sonatype用户名
 var ossrhPassword = "" //sonatype密码
+*/
 
 
 val localProperties: File = project.rootProject.file("local.properties")
@@ -77,11 +79,11 @@ if (localProperties.exists()) {
     InputStreamReader(FileInputStream(localProperties), Charsets.UTF_8).use { reader ->
         properties.load(reader)
     }
-    signingKeyId = properties.getProperty("signing.keyId")
+  /*  signingKeyId = properties.getProperty("signing.keyId")
     signingPassword = properties.getProperty("signing.password")
     secretKeyRingFile = properties.getProperty("signing.secretKeyRingFile")
     ossrhUsername = properties.getProperty("ossrhUsername")
-    ossrhPassword = properties.getProperty("ossrhPassword")
+    ossrhPassword = properties.getProperty("ossrhPassword")*/
 
 } else {
     println("No props file, loading env vars")
@@ -129,29 +131,29 @@ afterEvaluate {
         }
 
         repositories {
-            maven {
+           /* maven {
                 url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
                 credentials {
                     username = ossrhUsername
                     password = ossrhPassword
                 }
-            }
+            }*/
         }
 
     }
 
 }
 
-gradle.taskGraph.whenReady {
+/*gradle.taskGraph.whenReady {
     if (allTasks.any { it is Sign }) {
 
-        allprojects {
+       *//* allprojects {
             extra["signing.keyId"] = signingKeyId
             extra["signing.secretKeyRingFile"] = secretKeyRingFile
             extra["signing.password"] = signingPassword
-        }
+        }*//*
     }
-}
+}*/
 
 signing {
     sign(publishing.publications)
