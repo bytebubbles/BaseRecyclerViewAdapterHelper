@@ -10,7 +10,7 @@ plugins {
     signing
 }
 
-val versionName = "4.0.0-beta04"
+val versionName = "4.0.7-beta04"
 
 
 android {
@@ -50,6 +50,7 @@ android {
             withJavadocJar()
         }
     }*/
+
 }
 
 
@@ -65,7 +66,7 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.0-rc01")
 
     implementation("androidx.databinding:databinding-runtime:4.2.2")
-    //implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.20")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.20")
 }
 
 
@@ -97,7 +98,7 @@ if (localProperties.exists()) {
     println("No props file, loading env vars")
 }
 
-/*afterEvaluate {
+afterEvaluate {
 
     publishing {
         publications {
@@ -107,7 +108,7 @@ if (localProperties.exists()) {
                 artifactId = "BaseRecyclerViewAdapterHelper"
                 version = versionName
 
-                pom {
+               /* pom {
                     name.value("BaseRecyclerViewAdapterHelper")
                     description.value("Powerful and flexible RecyclerAdapter")
                     url.value("https://github.com/CymChad/BaseRecyclerViewAdapterHelper")
@@ -133,24 +134,13 @@ if (localProperties.exists()) {
                         developerConnection.value("scm:git@github.com/CymChad/BaseRecyclerViewAdapterHelper.git")
                         url.value("https://github.com/CymChad/BaseRecyclerViewAdapterHelper")
                     }
-                }
+                }*/
             }
 
         }
-
-        repositories {
-           *//* maven {
-                url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-                credentials {
-                    username = ossrhUsername
-                    password = ossrhPassword
-                }
-            }*//*
-        }
-
     }
 
-}*/
+}
 
 /*gradle.taskGraph.whenReady {
     if (allTasks.any { it is Sign }) {
