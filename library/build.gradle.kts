@@ -43,13 +43,13 @@ android {
     }
 
 
-    publishing {
+    /*publishing {
         singleVariant("release") {
             // if you don't want sources/javadoc, remove these lines
             withSourcesJar()
             withJavadocJar()
         }
-    }
+    }*/
 }
 
 
@@ -65,6 +65,7 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.0-rc01")
 
     implementation("androidx.databinding:databinding-runtime:4.2.2")
+    //implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.20")
 }
 
 
@@ -162,7 +163,7 @@ if (localProperties.exists()) {
     }
 }*/
 
-signing {
+/*signing {
     sign(publishing.publications)
-}
+}*/
 
