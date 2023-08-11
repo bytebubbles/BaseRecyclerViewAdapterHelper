@@ -4,6 +4,7 @@ import java.util.*
 
 plugins {
     id("com.android.library")
+    id("maven-publish")
     kotlin("android")
     `maven-publish`
     signing
@@ -42,13 +43,13 @@ android {
     //namespace = "com.chad.library"
 
 
-    publishing {
+/*    publishing {
         singleVariant("release") {
             // if you don't want sources/javadoc, remove these lines
             withSourcesJar()
             withJavadocJar()
         }
-    }
+    }*/
 }
 
 
@@ -98,7 +99,7 @@ afterEvaluate {
                 artifactId = "BaseRecyclerViewAdapterHelper"
                 version = versionName
 
-                pom {
+                /*pom {
                     name.value("BaseRecyclerViewAdapterHelper")
                     description.value("Powerful and flexible RecyclerAdapter")
                     url.value("https://github.com/CymChad/BaseRecyclerViewAdapterHelper")
@@ -124,20 +125,20 @@ afterEvaluate {
                         developerConnection.value("scm:git@github.com/CymChad/BaseRecyclerViewAdapterHelper.git")
                         url.value("https://github.com/CymChad/BaseRecyclerViewAdapterHelper")
                     }
-                }
+                }*/
             }
 
         }
 
-        repositories {
-            /*maven {
+        /*repositories {
+            *//*maven {
                 url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
                 credentials {
                     username = ossrhUsername
                     password = ossrhPassword
                 }
-            }*/
-        }
+            }*//*
+        }*/
 
     }
 
