@@ -5,6 +5,8 @@ import java.util.*
 plugins {
     id("com.android.library")
     kotlin("android")
+    id("maven-publish")
+    signing
 }
 
 val versionName = "4.0.1.2"
@@ -15,6 +17,7 @@ android {
 
     defaultConfig {
         minSdk = 16
+        targetSdk = 30
     }
 
 
@@ -48,4 +51,36 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.0")
 
     implementation("androidx.databinding:databinding-runtime:4.2.2")
+}
+
+val localProperties: File = project.rootProject.file("local.properties")
+
+if (localProperties.exists()) {
+    println("Found secret props file, loading props")
+    val properties = Properties()
+
+    InputStreamReader(FileInputStream(localProperties), Charsets.UTF_8).use { reader ->
+        properties.load(reader)
+    }
+
+
+} else {
+    println("No props file, loading env vars")
+}
+
+
+afterEvaluate {
+
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components.findByName("release"))
+                groupId = "io.github.cymchad"
+                artifactId = "BaseRecyclerViewAdapterHelper"
+                version = versionName
+            }
+
+        }
+    }
+
 }
