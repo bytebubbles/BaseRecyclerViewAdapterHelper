@@ -1,4 +1,4 @@
-pluginManagement {
+/*pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
@@ -11,6 +11,16 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+    }
+}
+
+include ':app', ':library'*/
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 

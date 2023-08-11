@@ -22,11 +22,17 @@ public class DragAndSwipeAdapter extends BaseQuickAdapter<String, QuickViewHolde
     @Override
     protected void onBindViewHolder(@NonNull QuickViewHolder holder, int position, String item) {
         switch (holder.getLayoutPosition() % 3) {
-            case 0 -> holder.setImageResource(R.id.iv_head, R.mipmap.head_img0);
-            case 1 -> holder.setImageResource(R.id.iv_head, R.mipmap.head_img1);
-            case 2 -> holder.setImageResource(R.id.iv_head, R.mipmap.head_img2);
-            default -> {
-            }
+            case 0:
+                holder.setImageResource(R.id.iv_head, R.mipmap.head_img0);
+                break;
+            case 1:
+                holder.setImageResource(R.id.iv_head, R.mipmap.head_img1);
+                break;
+            case 2:
+                holder.setImageResource(R.id.iv_head, R.mipmap.head_img2);
+                break;
+            default:
+                break;
         }
         holder.setText(R.id.tv, item);
     }

@@ -39,7 +39,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    namespace = "com.chad.library"
+    //namespace = "com.chad.library"
 
 
     publishing {
@@ -78,11 +78,11 @@ if (localProperties.exists()) {
     InputStreamReader(FileInputStream(localProperties), Charsets.UTF_8).use { reader ->
         properties.load(reader)
     }
-    signingKeyId = properties.getProperty("signing.keyId")
+    /*signingKeyId = properties.getProperty("signing.keyId")
     signingPassword = properties.getProperty("signing.password")
     secretKeyRingFile = properties.getProperty("signing.secretKeyRingFile")
     ossrhUsername = properties.getProperty("ossrhUsername")
-    ossrhPassword = properties.getProperty("ossrhPassword")
+    ossrhPassword = properties.getProperty("ossrhPassword")*/
 
 } else {
     println("No props file, loading env vars")
