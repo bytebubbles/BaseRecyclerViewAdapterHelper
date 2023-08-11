@@ -53,11 +53,11 @@ android {
 
 
 dependencies {
-    implementation("androidx.annotation:annotation:1.6.0")
+    implementation("androidx.annotation:annotation:1.4.0")
 
     implementation("androidx.recyclerview:recyclerview:1.3.0")
 
-    implementation("androidx.databinding:databinding-runtime:8.0.0")
+    implementation("androidx.databinding:databinding-runtime:4.2.2")
 }
 
 //---------- maven upload info -----------------------------------
